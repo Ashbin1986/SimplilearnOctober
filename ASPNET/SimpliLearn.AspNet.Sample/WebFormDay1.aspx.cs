@@ -20,7 +20,7 @@ namespace SimpliLearn.AspNet.Sample
             {
                 fileuploadImage.SaveAs(Server.MapPath("~/Files/" + fileuploadImage.FileName));
                 lblError.Text = "File uploaded successfully !.";
-                img.ImageUrl = Server.MapPath("~/Files/" + fileuploadImage.FileName);
+                img.ImageUrl = "~/Files/" + fileuploadImage.FileName;
             }
             else
             {
