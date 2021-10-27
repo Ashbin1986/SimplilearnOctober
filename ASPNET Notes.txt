@@ -1,0 +1,20 @@
+Asp.net : Server side technology which is used for developing web application.
+
+Assembly :Single unit of deployment
+
+DLL:Dynamic Link Library
+EXE : Executable files
+Resource files : Images/file
+
+Assesmbly : Collection of namespaces
+
+Namespace : Collection of classes
+
+Class : Collection Properties/functions etc
+
+Controls :
+
+Server Side Control
+
+Client Side COntrols
+
