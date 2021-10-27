@@ -11,7 +11,27 @@ namespace SimpliLearn.AspNet.Sample
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.QueryString["recordid"] != null)
+            {
+                var recordid = Request.QueryString["recordid"];
+                Response.Write(recordid);
+                // DB call
+            }
+            if(Session["User"] !=null)
+            {
+                lblUserName.Text = Session["User"].ToString();
+            }
+            else
+            {
+                Response.Redirect("Login.aspx?status=your are not authorized.");
+            }
 
+        }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();// clear the current session
+            Response.Redirect("Login.aspx?status=logout");
         }
     }
 }
