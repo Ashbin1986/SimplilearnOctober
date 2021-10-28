@@ -1,0 +1,9 @@
+C:\October Batch\SimplilearnOctober\BankingApplication\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.dll
+C:\October Batch\SimplilearnOctober\BankingApplication\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.pdb
+C:\October Batch\SimplilearnOctober\BankingApplication\BusinessAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\October Batch\SimplilearnOctober\BankingApplication\BusinessAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\October Batch\SimplilearnOctober\BankingApplication\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.csproj.AssemblyReference.cache
+C:\October Batch\SimplilearnOctober\BankingApplication\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.csproj.CoreCompileInputs.cache
+C:\October Batch\SimplilearnOctober\BankingApplication\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.csproj.CopyComplete
+C:\October Batch\SimplilearnOctober\BankingApplication\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.dll
+C:\October Batch\SimplilearnOctober\BankingApplication\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.pdb

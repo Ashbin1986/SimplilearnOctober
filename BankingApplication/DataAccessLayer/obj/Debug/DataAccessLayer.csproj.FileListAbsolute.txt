@@ -1,0 +1,5 @@
+C:\October Batch\SimplilearnOctober\BankingApplication\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\October Batch\SimplilearnOctober\BankingApplication\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\October Batch\SimplilearnOctober\BankingApplication\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\October Batch\SimplilearnOctober\BankingApplication\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\October Batch\SimplilearnOctober\BankingApplication\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

@@ -1,0 +1,31 @@
+
+VB : ADODC
+.NET : Netwrok Enabled Technologies
+
+ADO.NET :
+Connected Mode
+SqlConnection : Establishing a connection with the database
+SqlCommand : Specify the query/Stored proc
+	ExecuteNonQuery -- DML
+	ExecuteReader -- Reading
+	ExecuteScalar - Reading the first row of first column value
+SqlDataReader : Read the data from DB
+
+
+Disconnected Mode
+
+SqlConnection : Establishing a connection with the database
+SqlDataAdapter :Specify the query/Stored proc
+DataSet : Temp location
+
+
+PL => BL => DL => DB
+
+Architecture:
+1 Tier : PL => BL => DL => DB
+2 Tier : PL+BL(1 machine) + DL+DB(1 Machine)
+3 Tier
+NTire
+
+
+What is Extension ?
