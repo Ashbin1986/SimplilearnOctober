@@ -1,0 +1,52 @@
+﻿@model November01MVCApplication.Models.Products
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<h2>Add Product</h2>
+
+@using (Html.BeginForm("SaveProductItem", "Products", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(c => c.ProductId)
+        @Html.TextBoxFor(c => c.ProductId, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.ProductId, "", new { @class = "text-danger" })
+
+    </div>
+    <div class="form-group">
+        @Html.Label("ProductName")
+        @Html.TextBoxFor(c => c.ProductName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.ProductName, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.Label("ProductCategory")
+        @Html.TextBoxFor(c => c.ProductCategory, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(c => c.ProductPrice)
+        @Html.TextBoxFor(c => c.ProductPrice, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.ProductPrice, "", new { @class = "text-danger" })
+
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(c => c.Discount)
+        @Html.TextBoxFor(c => c.Discount, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.Discount, "", new { @class = "text-danger" })
+
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Save" />
+    </div>
+}
+
+

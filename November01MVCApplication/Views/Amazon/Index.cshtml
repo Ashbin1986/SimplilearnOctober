@@ -1,0 +1,33 @@
+﻿@model IEnumerable<November01MVCApplication.Models.Products>
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Amazon- Products</h2>
+
+<div>
+    <table class="table table-bordered table-responsive">
+        <tr>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Discount</th>
+            <th>Offer Price</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductId </td>
+                <td>@item.ProductName </td>
+                <td>@item.ProductCategory </td>
+                <td>@item.ProductPrice </td>
+                <td>@item.Discount </td>
+                <td>@item.DiscountedPrice </td>
+            </tr>
+        }
+
+    </table>
+
+</div>

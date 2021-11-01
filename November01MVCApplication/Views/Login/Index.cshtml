@@ -1,0 +1,29 @@
+﻿@model November01MVCApplication.Models.UserLogin
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<h2>Login</h2>
+@using (Html.BeginForm("ValidateUser", "Login", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(c => c.UserName)
+        @Html.TextBoxFor(c => c.UserName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.UserName, "", new { @class = "text-danger" })
+
+    </div>
+    <div class="form-group">
+        @Html.Label("Password")
+        @Html.PasswordFor(c => c.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.Password, "", new { @class = "text-danger" })
+    </div>
+
+
+    <div class="form-group">
+        <input type="submit" value="Login" />
+    </div>
+}
