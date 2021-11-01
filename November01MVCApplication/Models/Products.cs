@@ -19,5 +19,6 @@ namespace November01MVCApplication.Models
         [Range(1,10,ErrorMessage = "Max discount is allowed upto 10%")]
         public string Discount { get; set; }
         public string DiscountedPrice { get; set; }
+        public HttpPostedFileBase fileUpload { get; set; }
     }
 }
