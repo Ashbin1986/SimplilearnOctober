@@ -5,29 +5,42 @@
 }
 
 <h2>Amazon- Products</h2>
+<script>
+    function SearchProducts() {
+        
+        //var searchText = $("txtSearch").val();
+        var searchText = document.getElementById("txtSearch").value;
 
+        /// Call MVC Controller action
+    }
+
+</script>
 <div>
-    <table class="table table-bordered table-responsive">
-        <tr>
-            <th>Product Id</th>
-            <th>Product Name</th>
-            <th>Category</th>
-            <th>Price</th>
-            <th>Discount</th>
-            <th>Offer Price</th>
-        </tr>
-        @foreach (var item in Model)
-        {
+    <div class="form-group">
+         <input type="text" id="txtSearch"  />
+        <input type="button" value="Search" onclick="SearchProducts();" />
+        </div>
+        <table class="table table-bordered table-responsive">
             <tr>
-                <td>@item.ProductId </td>
-                <td>@item.ProductName </td>
-                <td>@item.ProductCategory </td>
-                <td>@item.ProductPrice </td>
-                <td>@item.Discount </td>
-                <td>@item.DiscountedPrice </td>
+                <th>Product Id</th>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Discount</th>
+                <th>Offer Price</th>
             </tr>
-        }
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ProductId </td>
+                    <td>@item.ProductName </td>
+                    <td>@item.ProductCategory </td>
+                    <td>@item.ProductPrice </td>
+                    <td>@item.Discount </td>
+                    <td>@item.DiscountedPrice </td>
+                </tr>
+            }
 
-    </table>
+        </table>
 
-</div>
+    </div>
