@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Session_23_08_2021DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Emo_Project_Mapping">
+    <Key>
+      <PropertyRef Name="Emp_Project_Mapping_ID" />
+    </Key>
+    <Property Name="Emp_Project_Mapping_ID" Type="Int32" Nullable="false" />
+    <Property Name="EmpId" Type="Int32" />
+    <Property Name="ProjectId" Type="Int32" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Emo_Project_Mapping_Employee" FromRole="Emo_Project_Mapping" ToRole="Employee" />
+    <NavigationProperty Name="Project" Relationship="Self.FK_Emo_Project_Mapping_Project" FromRole="Emo_Project_Mapping" ToRole="Project" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Emo_Project_Mapping" Relationship="Self.FK_Emo_Project_Mapping_Employee" FromRole="Employee" ToRole="Emo_Project_Mapping" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Name="ProjectId" Type="Int32" Nullable="false" />
+    <Property Name="ProjectName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Emo_Project_Mapping" Relationship="Self.FK_Emo_Project_Mapping_Project" FromRole="Project" ToRole="Emo_Project_Mapping" />
+  </EntityType>
+  <EntityType Name="TransactionDetail">
+    <Key>
+      <PropertyRef Name="TransactionId" />
+    </Key>
+    <Property Name="TransactionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TransferToAccount" Type="Int32" />
+    <Property Name="TransferFromAccount" Type="Int32" />
+    <Property Name="TransferAmount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TransactionDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="UserLogin">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Employee_Det">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_Emo_Project_Mapping_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Emo_Project_Mapping" Type="Self.Emo_Project_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="Emo_Project_Mapping">
+        <PropertyRef Name="EmpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emo_Project_Mapping_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="0..1" />
+    <End Role="Emo_Project_Mapping" Type="Self.Emo_Project_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="ProjectId" />
+      </Principal>
+      <Dependent Role="Emo_Project_Mapping">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Session_23_08_2021DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Emo_Project_Mapping" EntityType="Self.Emo_Project_Mapping" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="Projects" EntityType="Self.Project" />
+    <EntitySet Name="TransactionDetails" EntityType="Self.TransactionDetail" />
+    <EntitySet Name="UserLogins" EntityType="Self.UserLogin" />
+    <EntitySet Name="Employee_Det" EntityType="Self.Employee_Det" />
+    <AssociationSet Name="FK_Emo_Project_Mapping_Employee" Association="Self.FK_Emo_Project_Mapping_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Emo_Project_Mapping" EntitySet="Emo_Project_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emo_Project_Mapping_Project" Association="Self.FK_Emo_Project_Mapping_Project">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="Emo_Project_Mapping" EntitySet="Emo_Project_Mapping" />
+    </AssociationSet>
+    <FunctionImport Name="sp_AddTrasaction">
+      <Parameter Name="transferToAccount" Mode="In" Type="Int32" />
+      <Parameter Name="transferFromAccount" Mode="In" Type="Int32" />
+      <Parameter Name="transferAmount" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="sp_DeleteTransaction">
+      <Parameter Name="transactionId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetTransactions" ReturnType="Collection(Session_23_08_2021DBModel.sp_GetTransactions_Result)" />
+  </EntityContainer>
+  <ComplexType Name="sp_GetTransactions_Result">
+    <Property Type="Int32" Name="TransactionId" Nullable="false" />
+    <Property Type="Int32" Name="TransferToAccount" Nullable="true" />
+    <Property Type="Int32" Name="TransferFromAccount" Nullable="true" />
+    <Property Type="Decimal" Name="TransferAmount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="TransactionDate" Nullable="true" Precision="23" />
+  </ComplexType>
+</Schema>

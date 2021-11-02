@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Session_23_08_2021DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Emo_Project_Mapping">
+    <Key>
+      <PropertyRef Name="Emp_Project_Mapping_ID" />
+    </Key>
+    <Property Name="Emp_Project_Mapping_ID" Type="int" Nullable="false" />
+    <Property Name="EmpId" Type="int" />
+    <Property Name="ProjectId" Type="int" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+    <Property Name="EmployeeName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Session_23_08_2021DB.dbo.Employee_Det' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Employee_Det">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+    <Property Name="EmployeeName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Session_23_08_2021DB.dbo.EmployeeBatch' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="EmployeeBatch">
+          <Property Name="EmpId" Type="int" />
+          <Property Name="EmpName" Type="varchar" MaxLength="20" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Session_23_08_2021DB.dbo.EmployeeDetailsBatch' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="EmployeeDetailsBatch">
+          <Property Name="EmpId" Type="int" />
+          <Property Name="EmpName" Type="varchar" MaxLength="20" />
+          <Property Name="Salary" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>-->
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="ProjectName" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="TransactionDetails">
+    <Key>
+      <PropertyRef Name="TransactionId" />
+    </Key>
+    <Property Name="TransactionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TransferToAccount" Type="int" />
+    <Property Name="TransferFromAccount" Type="int" />
+    <Property Name="TransferAmount" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="TransactionDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UserLogin">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="20" />
+    <Property Name="Password" Type="nvarchar" MaxLength="12" />
+    <Property Name="CreatedDate" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_Emo_Project_Mapping_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Emo_Project_Mapping" Type="Self.Emo_Project_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="Emo_Project_Mapping">
+        <PropertyRef Name="EmpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emo_Project_Mapping_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="0..1" />
+    <End Role="Emo_Project_Mapping" Type="Self.Emo_Project_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="ProjectId" />
+      </Principal>
+      <Dependent Role="Emo_Project_Mapping">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="sp_AddTrasaction" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="transferToAccount" Type="int" Mode="In" />
+    <Parameter Name="transferFromAccount" Type="int" Mode="In" />
+    <Parameter Name="transferAmount" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteTransaction" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="transactionId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetTransactions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="Session_23_08_2021DBModelStoreContainer">
+    <EntitySet Name="Emo_Project_Mapping" EntityType="Self.Emo_Project_Mapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TransactionDetails" EntityType="Self.TransactionDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserLogin" EntityType="Self.UserLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee_Det" EntityType="Self.Employee_Det" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Employee_Det].[EmployeeId] AS [EmployeeId], 
+    [Employee_Det].[EmployeeName] AS [EmployeeName]
+    FROM [dbo].[Employee_Det] AS [Employee_Det]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Emo_Project_Mapping_Employee" Association="Self.FK_Emo_Project_Mapping_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Emo_Project_Mapping" EntitySet="Emo_Project_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emo_Project_Mapping_Project" Association="Self.FK_Emo_Project_Mapping_Project">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="Emo_Project_Mapping" EntitySet="Emo_Project_Mapping" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -33,14 +33,17 @@
 
     @foreach (var item in ViewBag.MyProducts)
     {
-        <tr>
-            <td>@item.ProductId</td>
-            <td>@item.ProductName </td>
-            <td>@item.ProductCategory </td>
-            <td>@item.ProductPrice </td>
-            <td>@item.Discount </td>
-            <td>@item.DiscountedPrice </td>
-        </tr>
+        @*@if (@item.ProductId == 101)
+        {*@
+            <tr>
+                <td>@item.ProductId</td>
+                <td>@item.ProductName </td>
+                <td>@item.ProductCategory </td>
+                <td>@item.ProductPrice </td>
+                <td>@item.Discount </td>
+                <td>@item.DiscountedPrice </td>
+            </tr>
+        //}
     }
 
 </table>

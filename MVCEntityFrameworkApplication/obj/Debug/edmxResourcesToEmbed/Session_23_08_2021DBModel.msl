@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Session_23_08_2021DBModelStoreContainer" CdmEntityContainer="Session_23_08_2021DBEntities">
+    <EntitySetMapping Name="Emo_Project_Mapping">
+      <EntityTypeMapping TypeName="Session_23_08_2021DBModel.Emo_Project_Mapping">
+        <MappingFragment StoreEntitySet="Emo_Project_Mapping">
+          <ScalarProperty Name="Emp_Project_Mapping_ID" ColumnName="Emp_Project_Mapping_ID" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="Session_23_08_2021DBModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="Session_23_08_2021DBModel.Project">
+        <MappingFragment StoreEntitySet="Project">
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransactionDetails">
+      <EntityTypeMapping TypeName="Session_23_08_2021DBModel.TransactionDetail">
+        <MappingFragment StoreEntitySet="TransactionDetails">
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="TransferToAccount" ColumnName="TransferToAccount" />
+          <ScalarProperty Name="TransferFromAccount" ColumnName="TransferFromAccount" />
+          <ScalarProperty Name="TransferAmount" ColumnName="TransferAmount" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserLogins">
+      <EntityTypeMapping TypeName="Session_23_08_2021DBModel.UserLogin">
+        <MappingFragment StoreEntitySet="UserLogin">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee_Det">
+      <EntityTypeMapping TypeName="Session_23_08_2021DBModel.Employee_Det">
+        <MappingFragment StoreEntitySet="Employee_Det">
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_AddTrasaction" FunctionName="Session_23_08_2021DBModel.Store.sp_AddTrasaction" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteTransaction" FunctionName="Session_23_08_2021DBModel.Store.sp_DeleteTransaction" />
+    <FunctionImportMapping FunctionImportName="sp_GetTransactions" FunctionName="Session_23_08_2021DBModel.Store.sp_GetTransactions">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session_23_08_2021DBModel.sp_GetTransactions_Result">
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="TransferToAccount" ColumnName="TransferToAccount" />
+          <ScalarProperty Name="TransferFromAccount" ColumnName="TransferFromAccount" />
+          <ScalarProperty Name="TransferAmount" ColumnName="TransferAmount" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
