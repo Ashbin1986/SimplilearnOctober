@@ -5,4 +5,43 @@
 }
 
 <h2>Flipkart.com</h2>
+<div class="form-group">
+    <input type="text" id="txtSearch" />
+    <input type="button" value="Search" onclick="SearchProducts();" />
+</div>
+
+<table class="table table-bordered table-responsive">
+    <tr>
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Discount</th>
+        <th>Offer Price</th>
+    </tr>
+    @*@foreach (var item in ViewData["Products"] as List<November01MVCApplication.Models.Products>)
+        {
+            <tr>
+                <td>@item.ProductId </td>
+                <td>@item.ProductName </td>
+                <td>@item.ProductCategory </td>
+                <td>@item.ProductPrice </td>
+                <td>@item.Discount </td>
+                <td>@item.DiscountedPrice </td>
+            </tr>
+        }*@
+
+    @foreach (var item in ViewBag.MyProducts)
+    {
+        <tr>
+            <td>@item.ProductId</td>
+            <td>@item.ProductName </td>
+            <td>@item.ProductCategory </td>
+            <td>@item.ProductPrice </td>
+            <td>@item.Discount </td>
+            <td>@item.DiscountedPrice </td>
+        </tr>
+    }
+
+</table>
 

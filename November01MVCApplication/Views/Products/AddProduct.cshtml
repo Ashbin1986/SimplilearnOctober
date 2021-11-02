@@ -12,6 +12,10 @@
 
 @using (Html.BeginForm("SaveProductItem", "Products", FormMethod.Post))
 {
+    <div>
+        Last SavedItem Time : @TempData["TimeStamp"]
+
+    </div>
     <div class="form-group">
         @Html.LabelFor(c => c.ProductId)
         @Html.TextBoxFor(c => c.ProductId, new { @class = "form-control" })

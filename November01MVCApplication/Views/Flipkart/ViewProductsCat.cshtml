@@ -1,0 +1,51 @@
+﻿@model November01MVCApplication.Models.ProductCategoryResponseModel
+
+@{
+    ViewBag.Title = "ViewProductsCat";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ViewProductsCat</h2>
+
+<div>
+    <h4>Product Category Response</h4>
+    <hr />
+    <table class="table table-bordered table-responsive">
+        @*<tr>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Discount</th>
+            <th>Offer Price</th>
+        </tr>*@
+        @*@foreach (var item in Model.Products)
+        {
+            <tr>
+                <td>@item.ProductId </td>
+                <td>@item.ProductName </td>
+                <td>@item.ProductCategory </td>
+                <td>@item.ProductPrice </td>
+                <td>@item.Discount </td>
+                <td>@item.DiscountedPrice </td>
+            </tr>
+        }*@
+        <tr>
+            <th>Category Id</th>
+            <th>Category Name</th>
+          
+        </tr>
+        @foreach (var item in Model.Categories)
+        {
+            <tr>
+                <td>@item.CatId </td>
+                <td>@item.CategoryName</td>
+
+            </tr>
+        }
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

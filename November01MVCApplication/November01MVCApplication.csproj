@@ -144,6 +144,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Documents\FINAL-GFLOORPLAN.pdf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -174,10 +175,10 @@
     <Content Include="Views\Products\AddProduct.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\FileUpload\UploadFile.cshtml" />
+    <Content Include="Views\Flipkart\ViewProductsCat.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Documents\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

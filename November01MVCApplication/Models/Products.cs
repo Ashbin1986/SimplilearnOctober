@@ -21,4 +21,16 @@ namespace November01MVCApplication.Models
         public string DiscountedPrice { get; set; }
         public HttpPostedFileBase fileUpload { get; set; }
     }
+
+    public class Category
+    {
+        public int CatId { get; set; }
+        public string CategoryName { get; set; }
+    }
+    public class ProductCategoryResponseModel
+    {
+       public List<Category> Categories { get; set; }
+        public List<Products> Products { get; set; }
+
+    }
 }

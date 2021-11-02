@@ -17,17 +17,22 @@ namespace November01MVCApplication.Controllers
         public ActionResult AddProduct()
         {
             Products product = new Products();
-            return View(product);
+            if(TempData["LastSavedItemTimeStamp"] !=null)
+            {
+                TempData["TimeStamp"] = TempData["LastSavedItemTimeStamp"];
+            }
+                return View(product);
         }
 
         public ActionResult SaveProductItem(Products item)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 // Error Meesage
             }
-            Products product = new Products();
-            return View("AddProduct", product);
+            TempData["LastSavedItemTimeStamp"] = DateTime.Now;
+            // return RedirectToAction("Index", "Amazon");
+            return RedirectToAction("AddProduct");
 
         }
     }
