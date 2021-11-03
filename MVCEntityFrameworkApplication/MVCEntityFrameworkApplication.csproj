@@ -130,6 +130,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DataAccess\DBHelper.cs" />
     <Compile Include="Emo_Project_Mapping.cs">
       <DependentUpon>Session_23_08_2021DBModel.tt</DependentUpon>
     </Compile>
@@ -142,6 +143,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mappings\EmployeeMapping.cs" />
     <Compile Include="Project.cs">
       <DependentUpon>Session_23_08_2021DBModel.tt</DependentUpon>
     </Compile>
@@ -170,6 +172,7 @@
     <Compile Include="UserLogin.cs">
       <DependentUpon>Session_23_08_2021DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\EmployeeResponseVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -224,12 +227,14 @@
     <Content Include="Session_23_08_2021DBModel.edmx.diagram">
       <DependentUpon>Session_23_08_2021DBModel.edmx</DependentUpon>
     </Content>
-    <Content Include="Views\Employee\Details.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Employee\Create.cshtml" />
+    <Content Include="Views\Employee\Edit.cshtml" />
+    <Content Include="Views\Employee\Delete.cshtml" />
+    <Content Include="Views\Employee\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -246,6 +251,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayerForMVC\BusinessLayerForMVC.csproj">
+      <Project>{83838c2e-e8ac-431d-956d-f691ddb11e49}</Project>
+      <Name>BusinessLayerForMVC</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

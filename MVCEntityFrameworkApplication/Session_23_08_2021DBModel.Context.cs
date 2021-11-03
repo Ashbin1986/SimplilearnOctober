@@ -28,11 +28,11 @@ namespace MVCEntityFrameworkApplication
         }
     
         public virtual DbSet<Emo_Project_Mapping> Emo_Project_Mapping { get; set; }
-        public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Project> Projects { get; set; }
         public virtual DbSet<TransactionDetail> TransactionDetails { get; set; }
         public virtual DbSet<UserLogin> UserLogins { get; set; }
         public virtual DbSet<Employee_Det> Employee_Det { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
     
         public virtual int sp_AddTrasaction(Nullable<int> transferToAccount, Nullable<int> transferFromAccount, Nullable<decimal> transferAmount)
         {

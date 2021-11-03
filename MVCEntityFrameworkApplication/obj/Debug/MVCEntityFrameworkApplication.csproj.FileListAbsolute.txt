@@ -80,3 +80,6 @@ C:\October Batch\SimplilearnOctober\MVCEntityFrameworkApplication\obj\Debug\MVCE
 C:\October Batch\SimplilearnOctober\MVCEntityFrameworkApplication\obj\Debug\MVCEntityFrameworkApplication.csproj.CopyComplete
 C:\October Batch\SimplilearnOctober\MVCEntityFrameworkApplication\obj\Debug\MVCEntityFrameworkApplication.dll
 C:\October Batch\SimplilearnOctober\MVCEntityFrameworkApplication\obj\Debug\MVCEntityFrameworkApplication.pdb
+C:\October Batch\SimplilearnOctober\MVCEntityFrameworkApplication\obj\Debug\MVCEntityFrameworkApplication.csproj.AssemblyReference.cache
+C:\October Batch\SimplilearnOctober\MVCEntityFrameworkApplication\bin\BusinessLayerForMVC.dll
+C:\October Batch\SimplilearnOctober\MVCEntityFrameworkApplication\bin\BusinessLayerForMVC.pdb

@@ -10,7 +10,7 @@
 
 <h2>Add Product</h2>
 
-@using (Html.BeginForm("SaveProductItem", "Products", FormMethod.Post))
+@using (Html.BeginForm())
 {
     <div>
         Last SavedItem Time : @TempData["TimeStamp"]
@@ -50,6 +50,11 @@
 
     <div class="form-group">
         <input type="submit" value="Save" />
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="button" value="Create" id="Submit" class="btn btn-default" onclick="location.href='@Url.Action("SaveProductItem", "Products")'" />
+        </div>
     </div>
 }
 

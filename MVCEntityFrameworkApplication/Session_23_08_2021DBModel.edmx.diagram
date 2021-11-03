@@ -6,13 +6,13 @@
     <edmx:Diagrams>
       <Diagram DiagramId="1d70df2b6e3540aa8b9638edca8e08a7" Name="Diagram1">
         <EntityTypeShape EntityType="Session_23_08_2021DBModel.Emo_Project_Mapping" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Session_23_08_2021DBModel.Employee" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Session_23_08_2021DBModel.Project" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Session_23_08_2021DBModel.TransactionDetail" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Session_23_08_2021DBModel.UserLogin" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Session_23_08_2021DBModel.Employee_Det" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="Session_23_08_2021DBModel.FK_Emo_Project_Mapping_Employee" ManuallyRouted="false" />
         <AssociationConnector Association="Session_23_08_2021DBModel.FK_Emo_Project_Mapping_Project" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Session_23_08_2021DBModel.Employee" Width="1.5" PointX="0.75" PointY="6.875" />
+        <AssociationConnector Association="Session_23_08_2021DBModel.FK_Emo_Project_Mapping_Employee" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

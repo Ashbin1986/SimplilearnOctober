@@ -1,4 +1,8 @@
-﻿using System;
+﻿using BusinessLayerForMVC.Entities;
+using MVCEntityFrameworkApplication.DataAccess;
+using MVCEntityFrameworkApplication.Mappings;
+using MVCEntityFrameworkApplication.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,32 +13,30 @@ namespace MVCEntityFrameworkApplication.Controllers
     public class EmployeeController : Controller
     {
         // GET: Employee
-        
         public ActionResult Index()
         {
-            return View();
+            var employees = EmployeeMapping.MapEmployeeEntityToResponse(DBHelper.GetEmployees());
+
+            return View(employees);
         }
 
         // GET: Employee/Details/5
         public ActionResult Details(int id)
         {
-            Employee employee = new Employee();
-            
-            if (id > 0)
-            {
-                using (Session_23_08_2021DBEntities context = new Session_23_08_2021DBEntities())
-                {
-                    employee = context.Employees.Where(c => c.EmployeeId == id).FirstOrDefault();
+            var employeeEntity = DBHelper.GetEmployeeById(id);
 
-                }
-            }
-            return View(employee);
+            return View(new EmployeeResponseVM
+            {
+                EmployeeName = employeeEntity.EmployeeName,
+                EmployeeId = employeeEntity.EmployeeId,
+                Project = employeeEntity.Project
+            });
         }
 
         // GET: Employee/Create
         public ActionResult Create()
         {
-            return View(new Employee());
+            return View(new EmployeeResponseVM());
         }
 
         // POST: Employee/Create
@@ -53,11 +55,41 @@ namespace MVCEntityFrameworkApplication.Controllers
             }
         }
 
+        // POST: Employee/Create
+        [HttpPost]
+        public ActionResult AddEmployee(EmployeeResponseVM employeeResponseVM)
+        {
+            try
+            {
+                var empRecord = new EmployeeEntity()
+                {
+                    EmployeeName = employeeResponseVM.EmployeeName
+                };
+
+                DBHelper.AddEmployee(empRecord);
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
         // GET: Employee/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var employeeEntity = DBHelper.GetEmployeeById(id);
+
+            return View(new EmployeeResponseVM
+            {
+                EmployeeName = employeeEntity.EmployeeName,
+                EmployeeId = employeeEntity.EmployeeId,
+                Project = employeeEntity.Project
+            });
         }
+
+
 
         // POST: Employee/Edit/5
         [HttpPost]
@@ -66,6 +98,13 @@ namespace MVCEntityFrameworkApplication.Controllers
             try
             {
                 // TODO: Add update logic here
+                EmployeeEntity employeeEntity = new EmployeeEntity
+                {
+                    EmployeeId = id,
+                    EmployeeName = collection.Get("EmployeeName")
+                };
+
+                DBHelper.UpdateEmployee(employeeEntity);
 
                 return RedirectToAction("Index");
             }
@@ -78,7 +117,14 @@ namespace MVCEntityFrameworkApplication.Controllers
         // GET: Employee/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var employeeEntity = DBHelper.GetEmployeeById(id);
+
+            return View(new EmployeeResponseVM
+            {
+                EmployeeName = employeeEntity.EmployeeName,
+                EmployeeId = employeeEntity.EmployeeId,
+                Project = employeeEntity.Project
+            });
         }
 
         // POST: Employee/Delete/5
@@ -87,7 +133,7 @@ namespace MVCEntityFrameworkApplication.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
+                DBHelper.DeleteEmployee(id);
 
                 return RedirectToAction("Index");
             }

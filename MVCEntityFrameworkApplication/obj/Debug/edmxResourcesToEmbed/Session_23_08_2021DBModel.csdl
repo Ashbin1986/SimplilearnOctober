@@ -7,16 +7,8 @@
     <Property Name="Emp_Project_Mapping_ID" Type="Int32" Nullable="false" />
     <Property Name="EmpId" Type="Int32" />
     <Property Name="ProjectId" Type="Int32" />
-    <NavigationProperty Name="Employee" Relationship="Self.FK_Emo_Project_Mapping_Employee" FromRole="Emo_Project_Mapping" ToRole="Employee" />
     <NavigationProperty Name="Project" Relationship="Self.FK_Emo_Project_Mapping_Project" FromRole="Emo_Project_Mapping" ToRole="Project" />
-  </EntityType>
-  <EntityType Name="Employee">
-    <Key>
-      <PropertyRef Name="EmployeeId" />
-    </Key>
-    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
-    <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Emo_Project_Mapping" Relationship="Self.FK_Emo_Project_Mapping_Employee" FromRole="Employee" ToRole="Emo_Project_Mapping" />
+    <NavigationProperty Name="Employee" Relationship="Session_23_08_2021DBModel.FK_Emo_Project_Mapping_Employee" FromRole="Emo_Project_Mapping" ToRole="Employee" />
   </EntityType>
   <EntityType Name="Project">
     <Key>
@@ -52,18 +44,6 @@
     <Property Name="EmployeeId" Type="Int32" Nullable="false" />
     <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
-  <Association Name="FK_Emo_Project_Mapping_Employee">
-    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
-    <End Role="Emo_Project_Mapping" Type="Self.Emo_Project_Mapping" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Employee">
-        <PropertyRef Name="EmployeeId" />
-      </Principal>
-      <Dependent Role="Emo_Project_Mapping">
-        <PropertyRef Name="EmpId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Emo_Project_Mapping_Project">
     <End Role="Project" Type="Self.Project" Multiplicity="0..1" />
     <End Role="Emo_Project_Mapping" Type="Self.Emo_Project_Mapping" Multiplicity="*" />
@@ -78,15 +58,10 @@
   </Association>
   <EntityContainer Name="Session_23_08_2021DBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Emo_Project_Mapping" EntityType="Self.Emo_Project_Mapping" />
-    <EntitySet Name="Employees" EntityType="Self.Employee" />
     <EntitySet Name="Projects" EntityType="Self.Project" />
     <EntitySet Name="TransactionDetails" EntityType="Self.TransactionDetail" />
     <EntitySet Name="UserLogins" EntityType="Self.UserLogin" />
     <EntitySet Name="Employee_Det" EntityType="Self.Employee_Det" />
-    <AssociationSet Name="FK_Emo_Project_Mapping_Employee" Association="Self.FK_Emo_Project_Mapping_Employee">
-      <End Role="Employee" EntitySet="Employees" />
-      <End Role="Emo_Project_Mapping" EntitySet="Emo_Project_Mapping" />
-    </AssociationSet>
     <AssociationSet Name="FK_Emo_Project_Mapping_Project" Association="Self.FK_Emo_Project_Mapping_Project">
       <End Role="Project" EntitySet="Projects" />
       <End Role="Emo_Project_Mapping" EntitySet="Emo_Project_Mapping" />
@@ -100,6 +75,11 @@
       <Parameter Name="transactionId" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="sp_GetTransactions" ReturnType="Collection(Session_23_08_2021DBModel.sp_GetTransactions_Result)" />
+    <EntitySet Name="Employees" EntityType="Session_23_08_2021DBModel.Employee" />
+    <AssociationSet Name="FK_Emo_Project_Mapping_Employee" Association="Session_23_08_2021DBModel.FK_Emo_Project_Mapping_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Emo_Project_Mapping" EntitySet="Emo_Project_Mapping" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="sp_GetTransactions_Result">
     <Property Type="Int32" Name="TransactionId" Nullable="false" />
@@ -108,4 +88,24 @@
     <Property Type="Decimal" Name="TransferAmount" Nullable="true" Precision="18" Scale="0" />
     <Property Type="DateTime" Name="TransactionDate" Nullable="true" Precision="23" />
   </ComplexType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Emo_Project_Mapping" Relationship="Session_23_08_2021DBModel.FK_Emo_Project_Mapping_Employee" FromRole="Employee" ToRole="Emo_Project_Mapping" />
+  </EntityType>
+  <Association Name="FK_Emo_Project_Mapping_Employee">
+    <End Type="Session_23_08_2021DBModel.Employee" Role="Employee" Multiplicity="0..1" />
+    <End Type="Session_23_08_2021DBModel.Emo_Project_Mapping" Role="Emo_Project_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="Emo_Project_Mapping">
+        <PropertyRef Name="EmpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

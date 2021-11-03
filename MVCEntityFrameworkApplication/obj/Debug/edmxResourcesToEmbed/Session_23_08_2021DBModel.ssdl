@@ -12,7 +12,7 @@
     <Key>
       <PropertyRef Name="EmployeeId" />
     </Key>
-    <Property Name="EmployeeId" Type="int" Nullable="false" />
+    <Property Name="EmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="EmployeeName" Type="varchar" MaxLength="50" />
   </EntityType>
   <!--Errors Found During Generation:
@@ -24,19 +24,6 @@ warning 6002: The table/view 'Session_23_08_2021DB.dbo.Employee_Det' does not ha
     <Property Name="EmployeeId" Type="int" Nullable="false" />
     <Property Name="EmployeeName" Type="varchar" MaxLength="50" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'Session_23_08_2021DB.dbo.EmployeeBatch' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="EmployeeBatch">
-          <Property Name="EmpId" Type="int" />
-          <Property Name="EmpName" Type="varchar" MaxLength="20" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'Session_23_08_2021DB.dbo.EmployeeDetailsBatch' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="EmployeeDetailsBatch">
-          <Property Name="EmpId" Type="int" />
-          <Property Name="EmpName" Type="varchar" MaxLength="20" />
-          <Property Name="Salary" Type="decimal" Precision="18" Scale="2" />
-        </EntityType>-->
   <EntityType Name="Project">
     <Key>
       <PropertyRef Name="ProjectId" />

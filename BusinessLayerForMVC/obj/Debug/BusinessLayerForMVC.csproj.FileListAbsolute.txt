@@ -1,0 +1,6 @@
+C:\October Batch\SimplilearnOctober\BusinessLayerForMVC\bin\Debug\BusinessLayerForMVC.dll
+C:\October Batch\SimplilearnOctober\BusinessLayerForMVC\bin\Debug\BusinessLayerForMVC.pdb
+C:\October Batch\SimplilearnOctober\BusinessLayerForMVC\obj\Debug\BusinessLayerForMVC.csproj.AssemblyReference.cache
+C:\October Batch\SimplilearnOctober\BusinessLayerForMVC\obj\Debug\BusinessLayerForMVC.csproj.CoreCompileInputs.cache
+C:\October Batch\SimplilearnOctober\BusinessLayerForMVC\obj\Debug\BusinessLayerForMVC.dll
+C:\October Batch\SimplilearnOctober\BusinessLayerForMVC\obj\Debug\BusinessLayerForMVC.pdb
