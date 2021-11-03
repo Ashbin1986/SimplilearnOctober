@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    @ViewBag.Message
+    <form method="post">
+        <h1>Multiple Action buttons </h1>
+        <button type="submit" value="ExportToExcel" name="action">
+            <i class="far fa-file-excel"></i> Export To Excel
+        </button>
+        <button type="submit" value="ExportToCsv" name="action">
+            <i class="fas fa-file-csv"></i> Export To Csv
+        </button>
+        <button type="submit" value="ExportToPdf" name="action">
+            <i class="far fa-file-pdf"></i> Export To Pdf
+        </button>
+    </form>
+</div>
+

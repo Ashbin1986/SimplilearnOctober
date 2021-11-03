@@ -93,6 +93,7 @@ namespace MVCEntityFrameworkApplication.Controllers
 
         // POST: Employee/Edit/5
         [HttpPost]
+
         public ActionResult Edit(int id, FormCollection collection)
         {
             try
@@ -115,6 +116,7 @@ namespace MVCEntityFrameworkApplication.Controllers
         }
 
         // GET: Employee/Delete/5
+        [NonAction]
         public ActionResult Delete(int id)
         {
             var employeeEntity = DBHelper.GetEmployeeById(id);
