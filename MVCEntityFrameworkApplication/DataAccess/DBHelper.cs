@@ -19,6 +19,10 @@ namespace MVCEntityFrameworkApplication.DataAccess
                 //var employess = context.Employees.Include("Emo_Project_Mapping").ToList();
 
                 var employess = context.Employees.ToList();
+                var maxRecord = employess.Max();
+                var cnt = employess.Count();
+                var empid = employess.Select(c => c.EmployeeId);
+                
 
                 if (employess != null && employess.Count > 0)
                 {
@@ -35,7 +39,10 @@ namespace MVCEntityFrameworkApplication.DataAccess
                     }
                 }
             }
-            return lstEmployee;
+            var firstElementRecord = lstEmployee.ElementAt(0);
+            //lstEmployee.Take(10);
+            //lstEmployee.Skip(2);
+            return lstEmployee.OrderByDescending(c => c.EmployeeId).ThenByDescending(c=>c.EmployeeName).ToList();
 
         }
 

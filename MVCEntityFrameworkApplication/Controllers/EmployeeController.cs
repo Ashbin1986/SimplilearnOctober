@@ -96,6 +96,9 @@ namespace MVCEntityFrameworkApplication.Controllers
 
         public ActionResult Edit(int id, FormCollection collection)
         {
+            string str = "10";
+
+            int x = int.Parse(str);
             try
             {
                 // TODO: Add update logic here
