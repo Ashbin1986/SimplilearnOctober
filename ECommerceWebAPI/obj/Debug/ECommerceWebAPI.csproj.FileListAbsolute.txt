@@ -83,3 +83,5 @@ C:\October Batch\SimplilearnOctober\ECommerceWebAPI\obj\Debug\ECommerceWebAPI.cs
 C:\October Batch\SimplilearnOctober\ECommerceWebAPI\obj\Debug\ECommerceWebAPI.csproj.CopyComplete
 C:\October Batch\SimplilearnOctober\ECommerceWebAPI\obj\Debug\ECommerceWebAPI.dll
 C:\October Batch\SimplilearnOctober\ECommerceWebAPI\obj\Debug\ECommerceWebAPI.pdb
+C:\October Batch\SimplilearnOctober\ECommerceWebAPI\bin\EntityFramework.dll
+C:\October Batch\SimplilearnOctober\ECommerceWebAPI\bin\EntityFramework.xml
