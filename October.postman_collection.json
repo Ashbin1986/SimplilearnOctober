@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "e2860c1b-e21f-437e-bc53-03817e2f171a",
+		"name": "October",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AddCustomers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"CustomerName\" :\"ashbin kuamr\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44352/api/CustomerService/AddCustomers",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44352",
+					"path": [
+						"api",
+						"CustomerService",
+						"AddCustomers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteCustomer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44352/api/CustomerService/DeleteCustomer?customerId=100",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44352",
+					"path": [
+						"api",
+						"CustomerService",
+						"DeleteCustomer"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateCustomer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"CustomerName\" :\"ashbin kuamr\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44352/api/CustomerService/UpdateCustomer?customerId=100",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44352",
+					"path": [
+						"api",
+						"CustomerService",
+						"UpdateCustomer"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCustomers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44352/api/CustomerService/GetCustomers",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44352",
+					"path": [
+						"api",
+						"CustomerService",
+						"GetCustomers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateGetCustomer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"CustomerName\" :\"ashbin kuamr\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44352/api/CustomerService/UpdateGetCustomer",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44352",
+					"path": [
+						"api",
+						"CustomerService",
+						"UpdateGetCustomer"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

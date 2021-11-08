@@ -1,0 +1,7 @@
+C:\October Batch\SimplilearnOctober\WCFSimplilearnService\bin\Debug\WCFSimplilearnService.dll.config
+C:\October Batch\SimplilearnOctober\WCFSimplilearnService\bin\Debug\WCFSimplilearnService.dll
+C:\October Batch\SimplilearnOctober\WCFSimplilearnService\bin\Debug\WCFSimplilearnService.pdb
+C:\October Batch\SimplilearnOctober\WCFSimplilearnService\obj\Debug\WCFSimplilearnService.csproj.AssemblyReference.cache
+C:\October Batch\SimplilearnOctober\WCFSimplilearnService\obj\Debug\WCFSimplilearnService.csproj.CoreCompileInputs.cache
+C:\October Batch\SimplilearnOctober\WCFSimplilearnService\obj\Debug\WCFSimplilearnService.dll
+C:\October Batch\SimplilearnOctober\WCFSimplilearnService\obj\Debug\WCFSimplilearnService.pdb
