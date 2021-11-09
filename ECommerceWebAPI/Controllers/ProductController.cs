@@ -146,6 +146,15 @@ namespace ECommerceWebAPI.Controllers
                 return Request.CreateResponse<CustomerOrdersList>(HttpStatusCode.InternalServerError, customerOrders);
             }
         }
+        [HttpGet]
+        [Route("{empid:int:min(1):max(100)}")]
+        public HttpResponseMessage GetEmployeeDetails(int empid)
+        {
+            List<Customer> customers = new List<Customer>();
+            customers.Add(new Customer { CustomerName = "Ashbin Kumar" });
+            customers.Add(new Customer { CustomerName = "Ashbin Kumar" });
+            return Request.CreateResponse<List<Customer>>(HttpStatusCode.OK, customers);
+        }
 
     }
 }
