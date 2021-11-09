@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ECommerceWebAPI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -38,15 +39,33 @@ namespace ECommerceWebAPI.Controllers
         }
 
 
+
         [HttpDelete]
         public HttpResponseMessage DeleteCustomer([FromUri] int customerId)
         {
+            using (ECommerceDBEntities context = new ECommerceDBEntities())
+            {
+                var customer = context.Customers.Where(c => c.CustomerId == customerId).FirstOrDefault();
+                context.Customers.Remove(customer);
+                context.SaveChanges();
+            }
             return Request.CreateResponse<string>(HttpStatusCode.OK, "Record deleted successfully");
         }
-       
+
         [HttpPut]
-        public HttpResponseMessage UpdateCustomer([FromUri] int customerId , Customer customer)
+        public HttpResponseMessage UpdateCustomer([FromUri] int customerId , CustomerRequest customer)
         {
+            using (ECommerceDBEntities context = new ECommerceDBEntities())
+            {
+                var customerInformation = context.Customers.Where(c => c.CustomerId == customerId).FirstOrDefault();
+                
+                if(customerInformation !=null)
+                {
+                    customerInformation.CustomerEmail = customer.CustomerEmail;
+                }
+                context.SaveChanges();
+            }
+
             return Request.CreateResponse<string>(HttpStatusCode.OK, "Record updated successfully");
         }
 

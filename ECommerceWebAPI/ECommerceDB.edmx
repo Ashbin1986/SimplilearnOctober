@@ -28,10 +28,11 @@
           </Key>
           <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="InvoiceNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerId" Type="int" />
           <Property Name="ProductId" Type="int" />
+          <Property Name="OrderPrice" Type="decimal" Precision="18" Scale="0" />
           <Property Name="OrderedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="CustomerId" Type="int" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -41,6 +42,7 @@
           <Property Name="ProductName" Type="varchar" MaxLength="200" />
           <Property Name="ProductDescription" Type="varchar" MaxLength="500" />
           <Property Name="Product_CategoryId" Type="int" />
+          <Property Name="Discount" Type="decimal" Precision="18" Scale="0" />
           <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
@@ -149,6 +151,7 @@
           <Property Name="CustomerId" Type="Int32" />
           <NavigationProperty Name="Customer" Relationship="Self.FK_Orders_Customer" FromRole="Orders" ToRole="Customer" />
           <NavigationProperty Name="Product" Relationship="ECommerceDBModel.FK_Orders_Product" FromRole="Order" ToRole="Product" />
+          <Property Name="OrderPrice" Type="Decimal" Precision="18" Scale="0" />
         </EntityType>
         <Association Name="FK_Orders_Customer">
           <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
@@ -205,6 +208,7 @@
           <Property Name="CreatedDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Category" Relationship="ECommerceDBModel.FK_Product_Product" FromRole="Product" ToRole="Category" />
           <NavigationProperty Name="Orders" Relationship="ECommerceDBModel.FK_Orders_Product" FromRole="Product" ToRole="Order" />
+          <Property Name="Discount" Type="Decimal" Precision="18" Scale="0" />
         </EntityType>
         <Association Name="FK_Product_Product">
           <End Type="ECommerceDBModel.Category" Role="Category" Multiplicity="0..1" />
@@ -258,6 +262,7 @@
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="ECommerceDBModel.Order">
               <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="OrderPrice" ColumnName="OrderPrice" />
                 <ScalarProperty Name="OrderId" ColumnName="OrderId" />
                 <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
@@ -288,6 +293,7 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="ECommerceDBModel.Product">
               <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Product_CategoryId" ColumnName="Product_CategoryId" />

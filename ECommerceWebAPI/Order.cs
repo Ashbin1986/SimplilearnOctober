@@ -20,6 +20,7 @@ namespace ECommerceWebAPI
         public Nullable<System.DateTime> OrderedDate { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<int> CustomerId { get; set; }
+        public Nullable<decimal> OrderPrice { get; set; }
     
         public virtual Customer Customer { get; set; }
         public virtual Product Product { get; set; }

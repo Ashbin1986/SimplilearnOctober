@@ -23,10 +23,11 @@
     </Key>
     <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="InvoiceNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomerId" Type="int" />
     <Property Name="ProductId" Type="int" />
+    <Property Name="OrderPrice" Type="decimal" Precision="18" Scale="0" />
     <Property Name="OrderedDate" Type="datetime" />
     <Property Name="CreatedDate" Type="datetime" />
-    <Property Name="CustomerId" Type="int" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
@@ -36,6 +37,7 @@
     <Property Name="ProductName" Type="varchar" MaxLength="200" />
     <Property Name="ProductDescription" Type="varchar" MaxLength="500" />
     <Property Name="Product_CategoryId" Type="int" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="0" />
     <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
     <Property Name="CreatedDate" Type="datetime" />
   </EntityType>

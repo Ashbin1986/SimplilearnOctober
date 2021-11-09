@@ -25,6 +25,7 @@ namespace ECommerceWebAPI
         public Nullable<int> Product_CategoryId { get; set; }
         public Nullable<decimal> Price { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
+        public Nullable<decimal> Discount { get; set; }
     
         public virtual Category Category { get; set; }
         public virtual ICollection<Order> Orders { get; set; }

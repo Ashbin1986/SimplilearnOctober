@@ -23,6 +23,7 @@
     <EntitySetMapping Name="Orders">
       <EntityTypeMapping TypeName="ECommerceDBModel.Order">
         <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="OrderPrice" ColumnName="OrderPrice" />
           <ScalarProperty Name="OrderId" ColumnName="OrderId" />
           <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
           <ScalarProperty Name="ProductId" ColumnName="ProductId" />
@@ -53,6 +54,7 @@
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="ECommerceDBModel.Product">
         <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Product_CategoryId" ColumnName="Product_CategoryId" />

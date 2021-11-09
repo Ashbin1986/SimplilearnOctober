@@ -78,10 +78,10 @@ C:\October Batch\SimplilearnOctober\ECommerceWebAPI\bin\System.Web.WebPages.Depl
 C:\October Batch\SimplilearnOctober\ECommerceWebAPI\bin\System.Web.WebPages.Razor.xml
 C:\October Batch\SimplilearnOctober\ECommerceWebAPI\bin\Antlr3.Runtime.pdb
 C:\October Batch\SimplilearnOctober\ECommerceWebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\October Batch\SimplilearnOctober\ECommerceWebAPI\obj\Debug\ECommerceWebAPI.csproj.AssemblyReference.cache
 C:\October Batch\SimplilearnOctober\ECommerceWebAPI\obj\Debug\ECommerceWebAPI.csproj.CoreCompileInputs.cache
 C:\October Batch\SimplilearnOctober\ECommerceWebAPI\obj\Debug\ECommerceWebAPI.csproj.CopyComplete
 C:\October Batch\SimplilearnOctober\ECommerceWebAPI\obj\Debug\ECommerceWebAPI.dll
 C:\October Batch\SimplilearnOctober\ECommerceWebAPI\obj\Debug\ECommerceWebAPI.pdb
 C:\October Batch\SimplilearnOctober\ECommerceWebAPI\bin\EntityFramework.dll
 C:\October Batch\SimplilearnOctober\ECommerceWebAPI\bin\EntityFramework.xml
+C:\October Batch\SimplilearnOctober\ECommerceWebAPI\obj\Debug\ECommerceWebAPI.csproj.AssemblyReference.cache

@@ -34,6 +34,7 @@
     <Property Name="CustomerId" Type="Int32" />
     <NavigationProperty Name="Customer" Relationship="Self.FK_Orders_Customer" FromRole="Orders" ToRole="Customer" />
     <NavigationProperty Name="Product" Relationship="ECommerceDBModel.FK_Orders_Product" FromRole="Order" ToRole="Product" />
+    <Property Name="OrderPrice" Type="Decimal" Precision="18" Scale="0" />
   </EntityType>
   <Association Name="FK_Orders_Customer">
     <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
@@ -90,6 +91,7 @@
     <Property Name="CreatedDate" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Category" Relationship="ECommerceDBModel.FK_Product_Product" FromRole="Product" ToRole="Category" />
     <NavigationProperty Name="Orders" Relationship="ECommerceDBModel.FK_Orders_Product" FromRole="Product" ToRole="Order" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="0" />
   </EntityType>
   <Association Name="FK_Product_Product">
     <End Type="ECommerceDBModel.Category" Role="Category" Multiplicity="0..1" />

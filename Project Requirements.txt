@@ -1,0 +1,8 @@
+Create an admin login page.
+The admin can create a list of laptops which will be displayed on the homepage.
+The admin can do CRUD operations on the laptops’ table.
+Create a homepage which will list laptops in a tabular format.
+When clicked, a detailed page for that laptop will open and buttons to Add To Cart.
+Create a View Cart page which will show the items added to the user’s cart.
+There will be no user signup for now. Use Session to keep a track of the user’s cart.
+Push all codes and scripts to a Github repo, which will be provided to you.
